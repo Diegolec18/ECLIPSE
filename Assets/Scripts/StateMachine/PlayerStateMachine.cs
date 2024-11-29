@@ -20,7 +20,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     // constants
     float _rotationFactorPerFrame = 15.0f;
-    float _runMultiplier = 4.0f;
+    float _runMultiplier = 8;
     int _zero = 0;
 
     // jumping variables

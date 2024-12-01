@@ -145,6 +145,45 @@ public class PlayerStateMachine : MonoBehaviour
       _characterController.Move(_cameraRelativeMovement * Time.deltaTime);
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        // Verifica si el objeto con el que colisionó tiene el tag "Vacio1"
+        if (other.CompareTag("Vacio1"))
+        {
+            TeleportToTarget("TeleportTarget1");
+        }
+        // Verifica si el objeto con el que colisionó tiene el tag "Vacio2"
+        else if (other.CompareTag("Vacio2"))
+        {
+            TeleportToTarget("TeleportTarget2");
+        }
+        // Verifica si el objeto con el que colisionó tiene el tag "Vacio3"
+        else if (other.CompareTag("Vacio3"))
+        {
+            TeleportToTarget("TeleportTarget3");
+        }
+    }
+
+    // Función para teletransportar al jugador a un target específico
+    void TeleportToTarget(string targetName)
+    {
+        // Encuentra el Empty (destino del teletransporte) por su nombre
+        GameObject teleportTarget = GameObject.Find(targetName);
+        if (teleportTarget != null)
+        {
+            // Mueve al jugador a la posición del Empty
+            _characterController.enabled = false; // Desactiva el CharacterController temporalmente
+            transform.position = teleportTarget.transform.position;
+            _characterController.enabled = true; // Reactiva el CharacterController
+        }
+        else
+        {
+            Debug.LogWarning($"No se encontró el objeto '{targetName}'. Asegúrate de que exista en la escena.");
+        }
+    }
+
+
+
     Vector3 ConvertToCameraSpace(Vector3 vectorToRotate)
     {
       // store the Y value of the original vector to rotate 

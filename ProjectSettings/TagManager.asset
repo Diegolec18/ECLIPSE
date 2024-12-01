@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Ground
   - Vacio
+  - Vacio2
+  - Vacio3
+  - Vacio1
+  - TeleportTarget1
+  - TeleportTarget2
+  - TeleportTarget3
   layers:
   - Default
   - TransparentFX

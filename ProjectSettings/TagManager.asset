@@ -12,6 +12,7 @@ TagManager:
   - TeleportTarget1
   - TeleportTarget2
   - TeleportTarget3
+  - Plataforma
   layers:
   - Default
   - TransparentFX

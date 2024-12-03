@@ -13,6 +13,9 @@ TagManager:
   - TeleportTarget2
   - TeleportTarget3
   - Plataforma
+  - Inicio
+  - Pagina
+  - MovablePlatform
   layers:
   - Default
   - TransparentFX

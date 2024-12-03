@@ -162,6 +162,12 @@ public class PlayerStateMachine : MonoBehaviour
         {
             TeleportToTarget("TeleportTarget3");
         }
+
+        // Verifica si el objeto con el que colisionó tiene el tag "Vacio3"
+        else if (other.CompareTag("Pagina"))
+        {
+            TeleportToTarget("Inicio");
+        }
     }
 
     // Función para teletransportar al jugador a un target específico
